@@ -175,12 +175,20 @@ const remove = (id) => todoStore.removeTodo(id);
 }
 .todo-table th,
 .todo-table td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--table-border);
   padding: 0.5rem 0.75rem;
   text-align: left;
+  color: var(--text-color);
 }
 .todo-table th {
-  background: #f5f5f5;
+  background: var(--table-header-bg);
+  color: var(--text-color);
+}
+.todo-table th.sortable {
+  cursor: pointer;
+}
+.todo-table th.sortable:hover {
+  background: var(--button-bg);
 }
 
 .flex-row {
@@ -197,16 +205,17 @@ const remove = (id) => todoStore.removeTodo(id);
   margin-bottom: 1rem;
 }
 .filter-row button {
-  background: #f5f5f5;
-  border: 1px solid #ccc;
+  background: var(--button-bg);
+  border: 1px solid var(--button-border);
   border-radius: 4px;
   padding: 0.25rem 0.75rem;
   cursor: pointer;
+  color: var(--text-color);
 }
 .filter-row button.active {
-  background: #0074d9;
-  color: #fff;
-  border-color: #0074d9;
+  background: var(--button-active-bg);
+  color: var(--button-active-color);
+  border-color: var(--button-active-bg);
 }
 .input-group {
   display: flex;
@@ -222,7 +231,7 @@ const remove = (id) => todoStore.removeTodo(id);
 .logout-link {
   background: none;
   border: none;
-  color: #0074d9;
+  color: var(--link-color);
   font-size: 1rem;
   cursor: pointer;
   text-decoration: underline;
